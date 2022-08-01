@@ -4,7 +4,7 @@
     <div class="info">
       <img src="../../assets/images/下载.png" alt="" />
       <span>欢迎您，<span>admin</span></span>
-      <div>退出</div>
+      <div @click="$router.push('/login')">退出</div>
     </div>
   </el-header>
 </template>

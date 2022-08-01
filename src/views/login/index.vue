@@ -94,7 +94,7 @@ export default {
         await this.$store.dispatch("user/getToken", this.form);
         if (this.$store.state.user.token) {
           
-          this.$router.push('/dashboard')
+          this.$router.push('/')
           this.$message('你登录成功了！真棒！');
         }else{
           this.$message('你验证码错了！找打？');
