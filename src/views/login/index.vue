@@ -89,7 +89,8 @@ export default {
       try {
         await this.$refs.form.validate();
         console.log(this.form);
-        this.form.clientToken=this.randomNum
+        // this.form.clientToken=this.randomNum
+        this.form.clientToken=this.clientToken
         await this.$store.dispatch("user/getToken", this.form);
         if (this.$store.state.user.token) {
           
