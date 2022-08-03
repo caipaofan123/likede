@@ -32,6 +32,7 @@
         </el-form-item>
 
         <el-button type="primary" class="formitem" @click.native="login"
+        :loading="loginBtnLoading"
           >登录</el-button
         >
       </el-form>
@@ -51,6 +52,7 @@ export default {
         clientToken:this.randomNum,
         loginType:0
       },
+      loginBtnLoading:false,
       rules: {
         loginName: [
           { required: true, message: "请输入正确用户名", trigger: "blur" },
@@ -87,6 +89,7 @@ export default {
   methods: {
     async login() {
       try {
+        this.loginBtnLoading=true
         await this.$refs.form.validate();
         console.log(this.form);
         // this.form.clientToken=this.randomNum
@@ -99,7 +102,10 @@ export default {
         }else{
           this.$message('你验证码错了！找打？');
         }
-      } catch (error) {}
+      } catch (error) {}finally{
+        this.loginBtnLoading=false
+      }
+      
     },
     async getCode() {
       const res = await getCode(this.randomNum);

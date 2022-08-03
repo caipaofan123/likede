@@ -12,6 +12,11 @@ export function getCode(clientToken) {
     url: `/api/user-service/user/imageCode/${clientToken}`,
   });
 }
-export function getInfo(token) {}
+export function getInfo(id) {
+  return request({
+      url: '/api/user-service/user/'+id
+      
+  })
+}
 
 export function logout() {}

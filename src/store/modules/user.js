@@ -3,11 +3,15 @@ export default  {
   namespaced: true,
   state: {
     token:'',
-    clientToken:''
+    clientToken:'',
+    userId:'',
+    userInfo:{}
+
   },
   mutations: {
     setToken(state,payload){
       state.token = payload
+      // state.userId = payload2
     },
     setClientToken(state,payload){
       state.clientToken = payload
@@ -16,9 +20,16 @@ export default  {
   actions: {
     async getToken(context,payload){
       const res = await login(payload)
-      console.log(res)
+      // const res1 = await getInfo(res.data.userId)
+      // console.log(res)
+      // console.log(res1)
       context.commit('setToken',res.data.token)
     },
+    // async getUserInfo(context,payload){
+      
+     
+    //   // context.commit('setUserInfo',res.data.token,res.data.userId)
+    // },
     getClientToken(context,payload){
       context.commit('setClientToken',payload)
     }
