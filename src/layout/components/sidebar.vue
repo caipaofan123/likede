@@ -1,22 +1,23 @@
 <template>
   <el-menu
+    router
     default-active="2"
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
   >
-    <el-menu-item index="1">
+    <el-menu-item index="/">
       <i class="el-icon-loading"></i>
       <span slot="title">帝可得</span>
     </el-menu-item>
-    <el-submenu index="2">
+    <el-submenu >
       <template slot="title">
         <i class="el-icon-cold-drink"></i>
         <span>工单管理</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="2-1">运营工单</el-menu-item>
-        <el-menu-item index="2-2">运维工单</el-menu-item>
+        <el-menu-item index="/task/business">运营工单</el-menu-item>
+        <el-menu-item index="/task/operation">运维工单</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="3">

@@ -62,7 +62,7 @@ export const constantRoutes = [
     name: 'task',
     children: [
       {
-        path: 'business',
+        path: '/business',
         name: 'business',
         component: () => import('@/views/task/business'),
       },

@@ -75,7 +75,7 @@ export default {
   },
 
   created() {
-    console.log(this.randomNum);
+    // console.log(this.randomNum);
     this.getCode();
   },
   computed: {
@@ -91,7 +91,7 @@ export default {
       try {
         this.loginBtnLoading=true
         await this.$refs.form.validate();
-        console.log(this.form);
+        // console.log(this.form);
         // this.form.clientToken=this.randomNum
         this.form.clientToken=this.clientToken
         await this.$store.dispatch("user/getToken", this.form);
@@ -109,10 +109,10 @@ export default {
     },
     async getCode() {
       const res = await getCode(this.randomNum);
-      console.log(this.randomNum);
+      // console.log(this.randomNum);
       this.$store.dispatch('user/getClientToken', this.randomNum);
 
-      console.log(res);
+      // console.log(res);
       this.$refs.code.src = res.request.responseURL;
       // this.objectURL='data:image/png;base64,' + data
     },

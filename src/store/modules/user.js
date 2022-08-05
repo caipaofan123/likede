@@ -1,4 +1,4 @@
-import {login} from '@/api/user'
+import {login,getUserInfo} from '@/api/user'
 export default  {
   namespaced: true,
   state: {
@@ -10,11 +10,18 @@ export default  {
   },
   mutations: {
     setToken(state,payload){
-      state.token = payload
-      // state.userId = payload2
+      state.token = payload.token
+      state.userId = payload.userId
     },
     setClientToken(state,payload){
       state.clientToken = payload
+    },
+    setUserInfo(state,payload){
+      state.userInfo = payload
+    },
+    logout(state){
+      state.token=''
+      state.userInfo={}
     }
   },
   actions: {
@@ -23,15 +30,19 @@ export default  {
       // const res1 = await getInfo(res.data.userId)
       // console.log(res)
       // console.log(res1)
-      context.commit('setToken',res.data.token)
+      context.commit('setToken',res.data)
     },
-    // async getUserInfo(context,payload){
-      
-     
-    //   // context.commit('setUserInfo',res.data.token,res.data.userId)
-    // },
+    async getUserInfo(context,payload) {
+      const res = await getUserInfo(payload)
+      // console.log(res);
+      context.commit('setUserInfo',res.data)
+    },
     getClientToken(context,payload){
       context.commit('setClientToken',payload)
+    },
+    logout(context){
+      context.commit('logout')
     }
+
   }
 }

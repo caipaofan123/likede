@@ -2,22 +2,32 @@
   <el-header>
     <img src="../../assets/images/logo.3673fab5.png" alt="" class="logo" />
     <div class="info">
-      <img src="../../assets/images/下载.png" alt="" />
-      <span>欢迎您，<span>admin</span></span>
-      <div @click="$router.push('/login')">退出</div>
+      <img :src="$store.state.user.userInfo.image+'1'" v-imgError="defaultImg" />
+      <span>欢迎您，<span>{{$store.state.user.userInfo.userName}}</span></span>
+      <div @click="logout">退出</div>
     </div>
   </el-header>
 </template>
 
 <script>
+import sai from '@/assets/images/sai.jpg';
 export default {
   data() {
-    return {};
+    return {
+      defaultImg:sai
+    };
   },
 
   created() {},
 
-  methods: {},
+  methods: {
+    async logout() {
+      await this.$store.dispatch('user/logout')
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+      // this.$store.state.user.token=''
+      // this.$router.push('/login')
+    },
+  },
 };
 </script>
 

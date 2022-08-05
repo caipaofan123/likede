@@ -12,10 +12,9 @@ export function getCode(clientToken) {
     url: `/api/user-service/user/imageCode/${clientToken}`,
   });
 }
-export function getInfo(id) {
+export function getUserInfo(id) {
   return request({
-      url: '/api/user-service/user/'+id
-      
+      url: `/api/user-service/user/${id}`,
   })
 }
 
