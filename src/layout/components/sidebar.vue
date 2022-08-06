@@ -10,13 +10,13 @@
       <i class="el-icon-loading"></i>
       <span slot="title">帝可得</span>
     </el-menu-item>
-    <el-submenu >
+    <el-submenu index="2">
       <template slot="title">
         <i class="el-icon-cold-drink"></i>
         <span>工单管理</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="/task/business">运营工单</el-menu-item>
+        <el-menu-item index="/task">运营工单</el-menu-item>
         <el-menu-item index="/task/operation">运维工单</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
@@ -25,10 +25,10 @@
         <i class="el-icon-position"></i>
         <span>点位管理</span>
       </template>
-      <el-menu-item-group>
-        <el-menu-item index="3-1">区域管理</el-menu-item>
-        <el-menu-item index="3-2">点位管理</el-menu-item>
-        <el-menu-item index="3-3">合作商管理</el-menu-item>
+      <el-menu-item-group >
+        <el-menu-item index="/node">区域管理</el-menu-item>
+        <el-menu-item index="/node/node">点位管理</el-menu-item>
+        <el-menu-item index="/node/partner">合作商管理</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="4">
@@ -37,9 +37,9 @@
         <span>设备管理</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="4-1">设备管理</el-menu-item>
-        <el-menu-item index="4-2">设备状态</el-menu-item>
-        <el-menu-item index="4-3">设备类型管理</el-menu-item>
+        <el-menu-item index="/vm">设备管理</el-menu-item>
+        <el-menu-item index="/vm/status">设备状态</el-menu-item>
+        <el-menu-item index="/vm/type">设备类型管理</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="5">
@@ -48,9 +48,9 @@
         <span>人员管理</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="5-1">人员列表</el-menu-item>
-        <el-menu-item index="5-2">人效统计</el-menu-item>
-        <el-menu-item index="5-3">工作量列表</el-menu-item>
+        <el-menu-item index="/user">人员列表</el-menu-item>
+        <el-menu-item index="/user/user-task-stats">人效统计</el-menu-item>
+        <el-menu-item index="/user/user-work">工作量列表</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="6">
@@ -59,19 +59,19 @@
         <span>商品管理</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="6-1">商品类型</el-menu-item>
-        <el-menu-item index="6-2">商品管理</el-menu-item>
+        <el-menu-item index="/sku">商品类型</el-menu-item>
+        <el-menu-item index="/sku/sku">商品管理</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
-    <el-menu-item index="7">
+    <el-menu-item index="/policy">
       <i class="el-icon-menu"></i>
       <span slot="title">策略管理</span>
     </el-menu-item>
-    <el-menu-item index="8">
+    <el-menu-item index="/order">
       <i class="el-icon-document"></i>
       <span slot="title">订单管理</span>
     </el-menu-item>
-    <el-menu-item index="9">
+    <el-menu-item index="/report">
       <i class="el-icon-setting"></i>
       <span slot="title">对账统计</span>
     </el-menu-item>
